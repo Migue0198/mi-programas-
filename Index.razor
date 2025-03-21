@@ -1,0 +1,29 @@
+﻿@page "/"
+
+<h3>🎉 ¡Feliz Cumpleaños ALBERTO! 🎂</h3>
+<p>  Feliz 19 añotes de parte del Migue, ten un gran dia pasala super bien (trabajando jaja ) te quiero muchisimooo   🌺🌷💐</p>
+
+
+
+<h3>AMERITA FESTEJO ¿NO?</h3>
+
+<button @onclick="StartFlowers">🌸 Mostrar flores 🌸</button>
+
+<div id="flower-container"></div>
+
+@code {
+    @inject IJSRuntime js
+
+    private async Task StartFlowers()
+    {
+        try
+        {
+            await js.InvokeVoidAsync("startFlowerAnimation");
+            Console.WriteLine("La función startFlowerAnimation se ejecutó correctamente.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error en JavaScript: {ex.Message}");
+        }
+    }
+}
