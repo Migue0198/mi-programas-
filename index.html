@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fcum</title>
+    <base href="/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="fcum.styles.css" rel="stylesheet" />
+
+    <!-- Agregar fuente bonita desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Cambiar fondo a rosa pastel */
+        body {
+            background-color: #f8d3e2; /* Rosa pastel */
+            font-family: 'Roboto', sans-serif; /* Fuente bonita */
+            font-size: 1.2em; /* Fuente más grande */
+            color: #333333; /* Color de texto */
+            text-align: center; /* Centrado del texto */
+            margin: 0;
+            padding: 0;
+            position: relative; /* Necesario para la imagen de fondo */
+            height: 100vh; /* Para que ocupe toda la pantalla */
+        }
+
+        /* Eliminar barra de navegación (si existe) */
+        nav, .navbar, .navigation, .side-nav, .blue-box {
+            display: none; /* Esto oculta el recuadro azul */
+        }
+
+        /* Centrar el contenido de la página */
+        #app {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Ocupa toda la altura disponible */
+            position: relative; /* Necesario para la imagen de fondo */
+        }
+
+        /* Estilo para los círculos de carga */
+        .loading-progress circle {
+            stroke: #4caf50; /* Color de los círculos de carga */
+        }
+
+        .loading-progress-text {
+            color: #4caf50; /* Color del texto de carga */
+        }
+
+        /* Estilo para el área de errores */
+        #blazor-error-ui {
+            font-size: 1.2em;
+        }
+
+        /* Centrar la imagen y hacerla ajustable */
+        .background-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centra la imagen */
+            max-width: 100%; /* Evita que se desborde */
+            max-height: 100%; /* Evita que se desborde */
+            z-index: -1; /* Pone la imagen detrás del contenido */
+        }
+
+        /* Reemplazar el recuadro con una imagen */
+        .image-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centra la imagen */
+            z-index: -1; /* Pone la imagen detrás del contenido */
+            width: 80%; /* Ajusta el tamaño de la imagen según sea necesario */
+            height: auto;
+        }
+    </style>
+</head>
+
+<script src="script.js"></script>
+
+<body>
+    <div id="app">
+        <!-- Contenedor para la imagen de tu galería -->
+        <div class="image-container">
+            <!-- Aquí estamos utilizando la ruta relativa a la imagen -->
+            <img src="IMAGENES/rosa.jpg" alt="Imagen de Galería" style="width: 100%; height: auto;" />
+        </div>
+
+        <!-- Los elementos de carga -->
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>
